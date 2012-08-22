@@ -5,6 +5,13 @@ This readme is a transscript of the original project page on Google Code.
 
 This tool was mainly developed by Christer Fahlgreen. He [blogged about this tool in 2010](http://christerblog.wordpress.com/2010/06/25/a-code-coverage-tool-for-delphi-2010/).
 
+I fixed some memory leaks and added some extras:
+
+ - Support for Environment Variables in Parameters and the List of source paths (see `-spf`)
+ - the possibility to exclude specific units in the units file (see `-uf`) by prepending a "!" before the unit name
+ - a "Verbose" switch (`-v`) for the output
+ - the tool outputs now (without the verbose switch) just the errors and a summary of the coverage on the console
+
 ## Introduction
 Delphi Code Coverage is a simple Code Coverage tool for Delphi that creates code coverage reports 
 based on detailed MAP files.
