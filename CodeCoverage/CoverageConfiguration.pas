@@ -814,9 +814,9 @@ begin
         inc(AParameter);
         modulename := parseParam(AParameter);
       end;
-      if modulenamespace.getCount() = 0 then
+      if modulenamespace.Count = 0 then
         raise EConfigurationException.Create('Expected at least one module');
-      FModuleNameSpaces.AddModuleNameSpace(modulenamespace);
+      FModuleNameSpaces.Add(modulenamespace);
       dec(AParameter);
     except
       on EParameterIndexException do
@@ -837,9 +837,9 @@ begin
         inc(AParameter);
         modulename := parseParam(AParameter);
       end;
-      if unitnamespace.getCount() = 0 then
+      if unitnamespace.Count = 0 then
         raise EConfigurationException.Create('Expected at least one module');
-      FUnitNameSpaces.AddUnitNameSpace(unitnamespace);
+      FUnitNameSpaces.Add(unitnamespace);
       dec(AParameter);
     except
       on EParameterIndexException do
