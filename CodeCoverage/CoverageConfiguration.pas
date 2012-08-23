@@ -526,7 +526,12 @@ begin
     for GroupIndex := 0 to Project.ChildNodes.Count - 1 do
     begin
       Node := Project.ChildNodes.Get(GroupIndex);
-      if (Node.LocalName = 'PropertyGroup') and Node.HasAttribute('Condition') and (Node.Attributes['Condition'] = '''$(Base)''!=''''') then
+      if (Node.LocalName = 'PropertyGroup')
+      and Node.HasAttribute('Condition')
+      and (
+        (Node.Attributes['Condition'] = '''$(Base)''!=''''')
+        or (Node.Attributes['Condition'] = '''$(Basis)''!=''''')
+      ) then
       begin
         DCC_DependencyCheckOutputName := Node.ChildNodes.FindNode('DCC_DependencyCheckOutputName');
         if DCC_DependencyCheckOutputName <> nil then
